@@ -1,0 +1,7 @@
+.ant-row{
+    margin:0 20px;
+}
+
+.ant-row > div{
+    padding:0 6px;
+}
