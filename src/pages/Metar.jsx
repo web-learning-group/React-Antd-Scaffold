@@ -1,28 +1,20 @@
 import React from 'react';
-import {render} from 'react-dom';
 import $ from 'jquery'
-
-// 引入Antd组件
 import {Card, Table, Col, Row} from 'antd';
-import 'antd/lib/Card/style/css'
-import 'antd/lib/Table/style/css'
-import 'antd/lib/Col/style/css'
-import 'antd/lib/Row/style/css'
-// import '../css/home.css'
 import {Input, Icon, notification} from 'antd'
-// import '../css/Metar.css'
-
+import AirportInfo from './AirportInfo.jsx'
+import '../css/style.css'
 
 class Metar extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
+            metar: "",
             icao:"",
             name: "",
             city: "",
             country: "",
-            metar: "",
             observed: "",
             flight_category:"",
             wind:"",
@@ -174,13 +166,13 @@ class Metar extends React.Component{
                 </Col>
 
                 <Col span="16">
-                  <Card style={{marginTop: 20, height: 150}}>
-                    <h2>{this.state.icao}</h2>
-                    <h3>{this.state.name}</h3>
-                    <h4>{this.state.city}, {this.state.country}</h4>
-                    <br/>
-                    <p style={{fontSize: 15}}>{this.state.metar}</p>
-                  </Card>
+                    <AirportInfo
+                        icao={this.state.icao}
+                        name={this.state.name}
+                        city={this.state.city}
+                        country={this.state.country}
+                        wx = {this.state.metar}
+                        />
                 </Col>
               </Row>
 

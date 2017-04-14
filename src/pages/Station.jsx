@@ -1,14 +1,7 @@
 import React from 'react';
-import {render} from 'react-dom';
 import $ from 'jquery'
 import GoogleMap from 'google-map-react'
-
-// 引入Antd组件
 import {Card, Col, Row} from 'antd';
-import 'antd/lib/Card/style/css'
-import 'antd/lib/Col/style/css'
-import 'antd/lib/Row/style/css'
-// import '../css/home.css'
 
 class Station extends React.Component{
 

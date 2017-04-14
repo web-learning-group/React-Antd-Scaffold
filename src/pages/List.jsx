@@ -1,13 +1,7 @@
 import React from 'react';
-import {render} from 'react-dom';
 import Mock from 'mockjs'
 import $ from 'jquery'
-
-// 引入Antd组件
 import { Table, Tooltip, Icon} from 'antd';
-import 'antd/lib/table/style/css'
-import 'antd/lib/tooltip/style/css'
-import 'antd/lib/icon/style/css'
 
 // 引入Mock
 let debug = 1;
