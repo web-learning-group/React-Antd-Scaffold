@@ -3,6 +3,7 @@ import $ from 'jquery'
 import {Card, Table, Col, Row} from 'antd';
 import AirportInfo from './AirportInfo.jsx'
 import '../css/style.css'
+import Search from '../components/Search.jsx'
 
 class Taf extends React.Component{
 
@@ -70,6 +71,12 @@ class Taf extends React.Component{
         this.reqTaf();
     }
 
+    handleAirportEntry(value) {
+      this.state.icao = value;
+      //console.log(this.state.airportEntry);
+      this.reqMetar();
+    }
+
     render(){
       const columns1 = [{
           title: 'Issued',
@@ -111,6 +118,7 @@ class Taf extends React.Component{
             <div>
                 <Row>
                     <Col span="8">
+                      <Search handleAirportEntry={this.handleAirportEntry.bind(this)}/>
                     </Col>
                     <Col span="16">
                         <AirportInfo

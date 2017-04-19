@@ -4,6 +4,7 @@ import {Card, Table, Col, Row} from 'antd';
 import {Input, Icon, notification} from 'antd'
 import AirportInfo from './AirportInfo.jsx'
 import '../css/style.css'
+import Search from '../components/Search.jsx'
 
 class Metar extends React.Component{
 
@@ -99,6 +100,12 @@ class Metar extends React.Component{
         this.refs.airportInput.focus();
     }
 
+    handleAirportEntry(value) {
+      this.state.airportEntry = value;
+      //console.log(this.state.airportEntry);
+      this.reqMetar();
+    }
+
     render(){
         const columns1 = [{
             title: 'Observed',
@@ -150,19 +157,7 @@ class Metar extends React.Component{
             <div>
               <Row>
                 <Col span="8">
-                  <Card style={{marginTop: 20, height: 150}}>
-                    <h1>Search</h1>
-                    <Input
-                      style={{margin: 10}}
-                      placeholder="Airport ICAO Number"
-                      prefix={<Icon type="cloud" />}
-                      suffix={suffix}
-                      value={this.state.airportEntry}
-                      onChange={this.onChangeAirport.bind(this)}
-                      onKeyDown={this.onEnterAirport.bind(this)}
-                      ref="airportInput"
-                      />
-                  </Card>
+                  <Search handleAirportEntry={this.handleAirportEntry.bind(this)}/>
                 </Col>
 
                 <Col span="16">
